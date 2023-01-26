@@ -6,6 +6,7 @@ import ru.smirnov.utils.Utils;
 import javax.swing.*;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 public class Main {
     public static class CmdParams {
@@ -53,9 +54,13 @@ public class Main {
             new Window().setVisible(true);
         } else {
             int x = Integer.parseInt(Utils.readLineFromFile(params.inputFile));
+            ArrayList<String> result = Logic.resultOutput(x);
             PrintStream out = (params.outputFile != null) ? new PrintStream(params.outputFile) :
                     System.out;
-            out.printf(Logic.resultOutput(x));
+            for (String s : result) {
+                out.printf(s + "\n");
+            }
+
             out.close();
         }
     }
