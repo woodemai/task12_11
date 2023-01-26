@@ -6,14 +6,14 @@ import java.util.function.Consumer;
 
 public class Logic {
 
-    private static int num1 = 1;
-    private static int num2 = 1;
+    private int num1 = 1;
+    private int num2 = 1;
 
     /**
      * @param x число для которого нужного вывести результат
      * @return строку с результатом
      */
-    public static ArrayList<String> resultOutput(int x) {
+    public ArrayList<String> resultOutput(int x) {
         ArrayList<String> result = new ArrayList<>();
         genAll(x, next -> {
             StringBuilder line = new StringBuilder();
@@ -29,7 +29,7 @@ public class Logic {
      * @param k        переданное натуральное число, которое нужно представить в виде суммы других натуральных чисел
      * @param callback функциональный интерфейс Consumer - ничего не возвращает, но выводит полученный вариант
      */
-    public static void genAll(int k, Consumer<List<Integer>> callback) {
+    public void genAll(int k, Consumer<List<Integer>> callback) {
         List<Integer> list = new ArrayList<>();
         for (int i = 1; i < k; i++) {
             list.add(num1);

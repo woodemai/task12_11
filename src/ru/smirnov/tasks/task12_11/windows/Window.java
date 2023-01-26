@@ -25,7 +25,7 @@ public class Window extends JFrame {
         buttonExecute.addActionListener(e -> {
             try {
                 int x = Integer.parseInt(textField.getText());
-                ArrayList<String> result = Logic.resultOutput(x);
+                ArrayList<String> result = new Logic().resultOutput(x);
                 StringBuilder lines = new StringBuilder();
                 for (String s : result) {
                     lines.append(s).append("\n");

@@ -54,7 +54,7 @@ public class Main {
             new Window().setVisible(true);
         } else {
             int x = Integer.parseInt(Utils.readLineFromFile(params.inputFile));
-            ArrayList<String> result = Logic.resultOutput(x);
+            ArrayList<String> result = new Logic().resultOutput(x);
             PrintStream out = (params.outputFile != null) ? new PrintStream(params.outputFile) :
                     System.out;
             for (String s : result) {
